@@ -1,4 +1,28 @@
+/*
+
+Colors:
+
+#2c96c3 - depper sky blue
+#00bfff - sky blue
+#e6f4f1 - faint green
+#eee8a9 - yellowish */
+
+:root {
+    --bkgdcolor: #2c96c3;
+    --text: #e6f4f1;
+    --link: #eee8a9;
+    font-family: 'Arial', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: lightgrey;
-    color: black;
+    background-color: var(--bkgdcolor);
+    color: var(--text);
+}
+
+h1 {
+    color: var(--link);
 }

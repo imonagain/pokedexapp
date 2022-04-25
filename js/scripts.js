@@ -51,13 +51,17 @@ let pokemonList = [
     {
         name: 'Mewtwo',
         nationalNumber: 150,
-        height: 2,
+        height: 3,
         type: 'Psychic',
         abilities: 'Pressure'
     }
 ] 
 
+// Prints name and height of each pokemon
 for (let i = 0; i < pokemonList.length; i++) {
-    console.log(pokemonList[i].name + " - " + pokemonList[i].height + " " + 'meters');
-
+    document.write("<br>" + pokemonList[i].name + " - " + pokemonList[i].height + " " + 'meters');
+// Identifies tallest pokemon and prints "That's a big pokemon!" next to height
+    if (pokemonList[i].height > 2) {
+    document.write(' - ' + 'That\'s a big pokemon!');
 }
+};
