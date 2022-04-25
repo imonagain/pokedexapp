@@ -1,7 +1,7 @@
 let pokemonList = [
     {
         name: 'Pikachu',
-        nationalNumber: 025,
+        nationalNumber: 25,
         height: 0.4,
         type: 'Electric',
         abilities: 'Static'
@@ -15,14 +15,14 @@ let pokemonList = [
     },
     {
         name: 'Meowth',
-        nationalNumber: 052,
+        nationalNumber: 52,
         height: 0.4,
         type: 'Normal',
         abilities: ['Pickup', 'Technician']
     },
     {
         name: 'Poliwag',
-        nationalNumber: 060,
+        nationalNumber: 60,
         height: 0.6,
         type: 'Water',
         abilities: ['Water Absorb', 'Damp']
