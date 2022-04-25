@@ -1,7 +1,7 @@
 let pokemonList = [
     {
         name: 'Pikachu',
-        nationalNumber: 25,
+        nationalNumber: 025,
         height: 0.4,
         type: 'Electric',
         abilities: 'Static'
@@ -15,14 +15,14 @@ let pokemonList = [
     },
     {
         name: 'Meowth',
-        nationalNumber: 52,
+        nationalNumber: 052,
         height: 0.4,
         type: 'Normal',
         abilities: ['Pickup', 'Technician']
     },
     {
         name: 'Poliwag',
-        nationalNumber: 60,
+        nationalNumber: 060,
         height: 0.6,
         type: 'Water',
         abilities: ['Water Absorb', 'Damp']
@@ -30,7 +30,7 @@ let pokemonList = [
     {
         name: 'Jigglypuff',
         nationalNumber: 39,
-        height: 0.5,
+        height: 0.7,
         type: ['Normal', 'Fairy'],
         abilities: ['Pickup', 'Technician']
     },
@@ -55,4 +55,9 @@ let pokemonList = [
         type: 'Psychic',
         abilities: 'Pressure'
     }
-]
+] 
+
+for (let i = 0; i < pokemonList.length; i++) {
+    console.log(pokemonList[i].name + " - " + pokemonList[i].height + " " + 'meters');
+
+}
