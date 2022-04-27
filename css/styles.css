@@ -23,6 +23,7 @@ body {
     color: var(--text);
 }
 
+b,
 h1 {
     color: var(--link);
 }
