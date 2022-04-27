@@ -1,11 +1,11 @@
 let pokemonListRepository = (function () {
   let pokemonList = [
     {
-      name: "Pikachu",
-      nationalNumber: 025,
-      height: 0.4,
-      type: "Electric",
-      abilities: "Static",
+        name: 'Pikachu',
+        nationalNumber: 25,
+        height: 0.4,
+        type: 'Electric',
+        abilities: 'Static'
     },
     {
       name: "Staryu",
@@ -15,18 +15,18 @@ let pokemonListRepository = (function () {
       abilities: ["Illuminate", " Natural Cure"],
     },
     {
-      name: "Meowth",
-      nationalNumber: 052,
-      height: 0.4,
-      type: "Normal",
-      abilities: ["Pickup", " Technician"],
+        name: 'Meowth',
+        nationalNumber: 52,
+        height: 0.4,
+        type: 'Normal',
+        abilities: ['Pickup', 'Technician']
     },
     {
-      name: "Poliwag",
-      nationalNumber: 060,
-      height: 0.6,
-      type: "Water",
-      abilities: ["Water Absorb", " Damp"],
+        name: 'Poliwag',
+        nationalNumber: 60,
+        height: 0.6,
+        type: 'Water',
+        abilities: ['Water Absorb', 'Damp']
     },
     {
       name: "Jigglypuff",
@@ -81,6 +81,7 @@ pokemonListRepository.add({
 });
 
 console.log(pokemonListRepository.getAll());
+
 
 pokemonListRepository.getAll().forEach(function (pokemon) {
   if (pokemon.height > 2) {
