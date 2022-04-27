@@ -74,7 +74,7 @@ let pokemonListRepository = (function () {
 
 pokemonListRepository.add({
   name: "Diglett",
-  nationalNumber: 50,
+  nationalNumber: 51,
   height: 0.2,
   type: "Ground",
   abilities: ["Sand Veil", " Area Trap"],
