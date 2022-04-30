@@ -1,4 +1,4 @@
-let pokemonListRepository = (function () {
+let pokemonRepository = (function () {
   let pokemonList = [
     {
       name: "Pikachu",
@@ -58,74 +58,41 @@ let pokemonListRepository = (function () {
     },
   ];
 
-  function add(pokemon) {
-    return pokemonList.push(pokemon);
-  }
-
   function getAll() {
     return pokemonList;
+  }
+
+  function add(pokemon) {
+    return pokemonList.push(pokemon);
+  } 
+
+  function addListItem(pokemon) {
+    let pokemonListClass = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('pokemon-button');
+    listItem.appendChild(button);
+    pokemonListClass.appendChild(listItem);
+    button.addEventListener('click',function() {
+      showDetails(pokemon.name);
+    });
+  } 
+
+
+  function showDetails(pokemon) {
+    console.log(pokemon)
   }
 
   return {
     add: add,
     getAll: getAll,
-  };
+    addListItem: addListItem
+  }
+
+
 })();
 
-pokemonListRepository.add({
-  name: "Diglett",
-  nationalNumber: 51,
-  height: 0.2,
-  type: "Ground",
-  abilities: ["Sand Veil", " Area Trap"],
-});
-
-console.log(pokemonListRepository.getAll());
-
-pokemonListRepository.getAll().forEach(function (pokemon) {
-  if (pokemon.height > 2) {
-    document.write(
-      "<p><b>" +
-        "Name: " +
-        "</b>" +
-        pokemon.name +
-        "<br><b>" +
-        "Height: " +
-        "</b>" +
-        pokemon.height +
-        " " +
-        "meters -- whoa that's huge!" +
-        "<br><b>" +
-        "Type: " +
-        "</b>" +
-        pokemon.type +
-        "<br><b>" +
-        "Abilities: " +
-        "</b>" +
-        pokemon.abilities +
-        "</p>"
-    );
-  } else {
-    document.write(
-      "<p><b>" +
-        "Name: " +
-        "</b>" +
-        pokemon.name +
-        "<br><b>" +
-        "Height: " +
-        "</b>" +
-        pokemon.height +
-        " " +
-        "meters" +
-        "<br><b>" +
-        "Type: " +
-        "</b>" +
-        pokemon.type +
-        "<br><b>" +
-        "Abilities: " +
-        "</b>" +
-        pokemon.abilities +
-        "</p>"
-    );
-  }
-});
+pokemonRepository.getAll().forEach(function (pokemon) {
+pokemonRepository.addListItem(pokemon);
+}); 
