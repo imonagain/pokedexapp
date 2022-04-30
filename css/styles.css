@@ -1,4 +1,4 @@
-/*
+/* 
 
 Colors:
 
@@ -8,22 +8,33 @@ Colors:
 #eee8a9 - yellowish */
 
 :root {
-    --bkgdcolor: #2c96c3;
-    --text: #e6f4f1;
-    --link: #eee8a9;
-    font-family: 'Arial', sans-serif;
+  --bkgdcolor: #2c96c3;
+  --text: #e6f4f1;
+  --link: #eee8a9;
+  font-family: "Arial", sans-serif;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bkgdcolor);
-    color: var(--text);
+  background-color: var(--bkgdcolor);
+  color: var(--text);
 }
 
 b,
 h1 {
-    color: var(--link);
+  color: var(--link);
 }
+
+.pokemon-list {
+  list-style-type: none;
+}
+
+.pokemon-button {
+    background: pink;
+    border: 1px green solid;
+    padding: 1em 2em;
+    margin: 1em; 
+} 
