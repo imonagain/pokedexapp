@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Pokedex</title>
-  </head>
 
-  <body>
-    <div class="container">
-      <div class="main-title"><h1>POKEDEX</h1></div>
-      <div class="main-list"><ul class="pokemon-list"></ul></div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>Pokedex</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main-title">
+      <h1>POKEDEX</h1>
     </div>
-    <script src="js/promise-polyfill.js"></script>
-    <script src="js/fetch-polyfill.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+    <div class="main-list">
+      <ul class="pokemon-list"></ul>
+    </div>
+  </div>
+
+  <button id='show-modal'> 
+    Show modal
+  </button>
+  <div class="modal-container"></div>
+  <script src="js/promise-polyfill.js"></script>
+  <script src="js/fetch-polyfill.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
 </html>
