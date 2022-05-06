@@ -2,7 +2,7 @@
 let pokemonRepository = (function () {
   let pokemonList = []; //empty array
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150"; //API
-  let modalContainer = document.querySelector(".modal-container")
+  let modalContainer = document.querySelector("#modal-container");
 
   // adds pokemon to end of pokemonList
   function add(pokemon) {
@@ -32,7 +32,7 @@ let pokemonRepository = (function () {
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
 
-    button.addEventListener("click", function (event) {
+    button.addEventListener('click', function (event) {
       showDetails(pokemon);
     });
   }
