@@ -109,6 +109,100 @@ b {
   position: relative;
 }
 
+/* Background of modal */
+.modal {
+display: none;
+position: fixed;
+z-index: 50;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+overflow: auto;
+background: rgba(72, 69, 69, 0.3)
+}
+
+/* What actually holds modal content */
+#modal-content {
+  background-color: #f4f4f4;
+  margin: 40% auto;
+  padding: 20px;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  color: purple;
+  border: 1px solid green;
+  box-sizing: border-box;
+  z-index: 999; 
+  overflow: auto; 
+}
+
+#modalBtn {
+  display: none;
+}
+
+.closeBtn {
+  color: lightseagreen;
+  float: right;
+  font-size: 30px;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.imgElement {
+  width: 100%;
+}
+
+
+/* #modal-content.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; 
+  overflow: auto; 
+  display: grid;
+  text-align: center; 
+} */
+
+/* Previous modal styling */
+/* .modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  color: #000;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+} */
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
+
+.modal h1 {
+  margin-top: 0;
+}
+
+.modal p {
+  margin-bottom: 0;
+}
+
+
 /* Accessibility code */
 @media all and (max-width: 20em) {
 
