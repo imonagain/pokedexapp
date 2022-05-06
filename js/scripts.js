@@ -65,7 +65,7 @@ let pokemonRepository = (function () {
         return response.json();
       })
       .then(function (details) {
-        pokemon.imageUrl = details.sprites.front_default; // .spirtes is coming from API
+        pokemon.imageUrl = details.sprites.front_shiny; // .spirtes is coming from API
         pokemon.height = details.height;
         pokemon.baseExperience = details.base_experience;
         pokemon.types = details.types[0].type.name;
@@ -104,14 +104,19 @@ function openModal(pokemon) {
     
     let titleElement = document.createElement('h2');
     titleElement.innerText = pokemon.name;
+
+    let imgElement = document.createElement('img')
+    imgElement.src = pokemon.imageUrl
     
     let contentElement = document.createElement('p');
-    contentElement.textContent = "Height: " + pokemon.height + " meters";
+    contentElement.src = pokemon.imageUrl;
+    contentElement.textContent += "Height: " + pokemon.height + " meters";
     contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience + " points";
     contentElement.innerText += "\n" + "Types: " + pokemon.types;
     
     // modal2.appendChild(closeButtonElement);
     modalInnerBody.appendChild(titleElement);
+    modalInnerBody.appendChild(imgElement);
     modalInnerBody.appendChild(contentElement);
     modalBody.appendChild(modalInnerBody);
     

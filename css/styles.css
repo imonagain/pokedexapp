@@ -152,6 +152,10 @@ background: rgba(72, 69, 69, 0.3)
   cursor: pointer;
 }
 
+.imgElement {
+  width: 100%;
+}
+
 
 /* #modal-content.is-visible {
   position: fixed;
