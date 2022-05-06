@@ -91,7 +91,7 @@ modalBtn.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
 // Listen for outside click
 window.addEventListener('click', outsideClick);
-// Listen for external click
+// Listen for escape keydown
 window.addEventListener('keydown', escapeClick);
 
 //Function to open modal
@@ -134,11 +134,10 @@ function outsideClick(e) {
   }
 }
 
-// Function to close on Escape click
+// Function to close on Escape keydown
 function escapeClick(event) { 
 if (event.key === 'Escape') {
   modal.style.display = 'none';
-  console.log(123);
   // hideModal();
 }
 }
