@@ -2,7 +2,7 @@
 let pokemonRepository = (function () {
   let pokemonList = []; //empty array
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150"; //API
-  let modalContainer = document.querySelector("#modal-container");
+
 
   // adds pokemon to end of pokemonList
   function add(pokemon) {
@@ -23,23 +23,19 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
     let button = document.createElement("button");
-    
-    
+
     button.innerText = pokemon.name;
     button.classList.add("pokemon-button");
-
-
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
-
     button.addEventListener('click', function (event) {
       showDetails(pokemon);
     });
   }
 
-  function showDetails(item) {
+  function showDetails(pokemon) {
     loadDetails(pokemon).then(() => {
-      showModal(item)
+      openModal(pokemon)
     });
   }
 
@@ -62,71 +58,86 @@ let pokemonRepository = (function () {
       });
   }
 
-  function loadDetails(item) {
-    let url = item.detailsUrl;
+  function loadDetails(pokemon) {
+    let url = pokemon.detailsUrl;
     return fetch(url)
       .then(function (response) {
         return response.json();
       })
       .then(function (details) {
-        item.imageUrl = details.sprites.front_default; // .spirtes is coming from API
-        item.height = details.height;
-        item.baseExperience = details.base_experience;
-        item.types = details.types;
+        pokemon.imageUrl = details.sprites.front_default; // .spirtes is coming from API
+        pokemon.height = details.height;
+        pokemon.baseExperience = details.base_experience;
+        pokemon.types = details.types[0].type.name;
       })
       .catch(function (e) {
         console.error(e);
       });
   }
-    // modal visible
-  document.querySelector("#show-modal").addEventListener("click", () => {
-    showModal("Modal title", "Modal Content");
-  });
 
+// Get modal element
+let modal = document.getElementById('simpleModal');
+// Get open modal button - Show modal button
+let modalBtn = document.getElementById('modalBtn');
+// Get close modal button
+let closeBtn = document.getElementsByClassName('closeBtn')[0];
+// Get modal content
+let modalBody = document.getElementById('modal-body')
+
+
+// Listen for open click
+modalBtn.addEventListener('click', openModal);
+// Listen for close click
+closeBtn.addEventListener('click', closeModal);
+// Listen for outside click
+window.addEventListener('click', outsideClick);
+// Listen for external click
+window.addEventListener('keydown', escapeClick);
+
+//Function to open modal
+function openModal(pokemon) {
+    modal.style.display = 'block';
+    modalBody.innerHTML = '';
+
+    let modalInnerBody = document.createElement('div');
+    modalInnerBody.classList.add('modalInnerBody');
     
-    // press escape button
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
-      hideModal();
-    }
-  });
+    let titleElement = document.createElement('h2');
+    titleElement.innerText = pokemon.name;
     
-  // click outside modal
-  modalContainer.addEventListener("click", (e) => {
-    let target = e.target;
-    if (target === modalContainer) {
-      hideModal();
-    }
-  });
+    let contentElement = document.createElement('p');
+    contentElement.textContent = "Height: " + pokemon.height + " meters";
+    contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience + " points";
+    contentElement.innerText += "\n" + "Types: " + pokemon.types;
+    
+    // modal2.appendChild(closeButtonElement);
+    modalInnerBody.appendChild(titleElement);
+    modalInnerBody.appendChild(contentElement);
+    modalBody.appendChild(modalInnerBody);
+    
+    // modal.classList.add('is-visible');
+}
 
-function showModal(title, text) {
-  modalContainer.innerHTML = '';
-  
-  let modal = document.createElement('div');
-  modal.classList.add('modal');
-  
-  let closeButtonElement = document.createElement('button');
-  closeButtonElement.classList.add('modal-close');
-  closeButtonElement.innerText = 'Close';
-  closeButtonElement.addEventListener('click', hideModal);
-  
-  let titleElement = document.createElement('h1');
-  titleElement.innerText = title;
-  
-  let contentElement = document.createElement('p');
-  contentElement.innerText = text;
-  
-  modal.appendChild(closeButtonElement);
-  modal.appendChild(titleElement);
-  modal.appendChild(contentElement);
-  modalContainer.appendChild(modal);
-  
-  modalContainer.classList.add('is-visible');
- }
+// Function to close modal
+function closeModal() {
+    modal.style.display = 'none';
+}
 
- function hideModal() {
-  modalContainer.classList.remove('is-visible');
- }
+function outsideClick(e) {
+  if(e.target === modal) {
+      modal.style.display = 'none';
+  }
+}
+
+// Function to close on Escape click
+function escapeClick(event) { 
+if (event.key === 'Escape') {
+  modal.style.display = 'none';
+  console.log(123);
+  // hideModal();
+}
+}
+
 
 return {
   add: add,

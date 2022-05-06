@@ -14,19 +14,27 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="main-title">
-      <h1>POKEDEX</h1>
-    </div>
-    <div class="main-list">
-      <ul class="pokemon-list"></ul>
-    </div>
-  </div>
 
-  <button id='show-modal'> 
+  <button id='modalBtn' class="button"> 
     Show modal
   </button>
-  <div id="modal-container" class="modal-container"></div>
+  
+  <div id="simpleModal" class="modal">
+    <div id="modal-content" class="modal-content">
+        <span class="closeBtn">&times;</span>
+         <div id="modal-body"></div>
+    </div>
+    </div>
+  
+    <div class="container">
+      <div class="main-title">
+        <h1>POKEDEX</h1>
+      </div>
+      <div class="main-list">
+        <ul class="pokemon-list"></ul>
+      </div>
+    </div>
+  </div>
   <script src="js/promise-polyfill.js"></script>
   <script src="js/fetch-polyfill.js"></script>
   <script src="js/scripts.js"></script>
