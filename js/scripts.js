@@ -39,40 +39,34 @@ let pokemonRepository = (function () {
     });
   }
 
-  function loadList() {
-    return fetch(apiUrl)
-      .then(function (response) { 
-        return response.json(); 
-      })
-      .then(function (json) {
-        json.results.forEach(function (item) { 
-          let pokemon = {
-            name: item.name,
-            detailsUrl: item.url,
-          };
-          add(pokemon);
-        });
-      })
-      .catch(function (e) {
-        console.log(e);
+  async function loadList() {
+    try {
+      const response = await fetch(apiUrl);
+      const json = await response.json();
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url,
+        };
+        add(pokemon);
       });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
-  function loadDetails(pokemon) {
+  async function loadDetails(pokemon) {
     let url = pokemon.detailsUrl;
-    return fetch(url)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (details) {
-        pokemon.imageUrl = details.sprites.other.dream_world.front_default;
-        pokemon.height = details.height;
-        pokemon.baseExperience = details.base_experience;
-        pokemon.types = details.types[0].type.name;
-      })
-      .catch(function (e) {
-        console.error(e);
-      });
+    try {
+      const response = await fetch(url);
+      const details = await response.json();
+      pokemon.imageUrl = details.sprites.other.dream_world.front_default;
+      pokemon.height = details.height;
+      pokemon.baseExperience = details.base_experience;
+      pokemon.types = details.types[0].type.name;
+    } catch (e) {
+      console.error(e);
+    }
   }
 
 // Get modal element
@@ -108,25 +102,23 @@ function openModal(pokemon) {
     let imgElement = document.createElement('img')
     imgElement.src = pokemon.imageUrl
     
-    let contentElement = document.createElement('p');
+    let contentElement = document.createElement('p')
     contentElement.textContent += "Height: " + pokemon.height + " meters";
     contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience + " points";
     contentElement.innerText += "\n" + "Types: " + pokemon.types;
     
-    // modal2.appendChild(closeButtonElement);
     modalInnerBody.appendChild(titleElement);
     modalInnerBody.appendChild(imgElement);
     modalInnerBody.appendChild(contentElement);
     modalBody.appendChild(modalInnerBody);
-    
-    // modal.classList.add('is-visible');
 }
 
-// Function to close modal
+// Function to close modal by x
 function closeModal() {
     modal.style.display = 'none';
 }
 
+// Function to close modal on outside click
 function outsideClick(e) {
   if(e.target === modal) {
       modal.style.display = 'none';

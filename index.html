@@ -15,26 +15,31 @@
 
 <body>
 
-  <button id='modalBtn' class="button"> 
-    Show modal
+  <button id='modalBtn' class="button">
   </button>
-  
+
   <div id="simpleModal" class="modal">
     <div id="modal-content" class="modal-content">
       <div class="closeBtn-container">
-        <span class="closeBtn">&times;</span></div>
-         <div id="modal-body"></div>
-    </div>
-    </div>
-  
-    <div class="container">
-      <div class="main-title">
-        <h1>POKEDEX</h1>
+        <span class="closeBtn">&times;</span>
       </div>
-      <div class="main-list">
-        <ul class="pokemon-list"></ul>
-      </div>
+      <div id="modal-body"></div>
     </div>
+  </div>
+
+  <div class="container">
+    <div class="main-title">
+      <h1>POKEDEX</h1>
+    </div>
+    <!-- Search Bar -->
+    <div class="main-list">
+      <div id="searchWrapper">
+        <input type="text" name="searchBar" id="searchBar" placeholder="Search for a pokemon" />
+      </div>
+      <!-- Main list -->
+      <ul class="pokemon-list"></ul>
+    </div>
+  </div>
   </div>
   <script src="js/promise-polyfill.js"></script>
   <script src="js/fetch-polyfill.js"></script>
