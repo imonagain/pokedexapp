@@ -11,15 +11,19 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="img\favicon\favicon.ico">
+    <link rel="stylesheet" href="css/styles.css" />
   <title>Pokedex</title>
 </head>
 
 <body>
-<nav class="navbar navbar-light">
-<a href="#" class="navbar-brand">Navbar</a>
-<a href="#" class="navbar-brand"></a>
-</nav>
+  <nav class="navbar justify-content-between">
+    <a class="navbar-brand main-title">POKEDEX</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
 
 
   <button id='modalBtn' class="button">
@@ -34,9 +38,6 @@
   </div>
 
   <div class="container">
-    <div class="main-title">
-      <h1>POKEDEX</h1>
-    </div>
     <div class="main-list">
       <ul class="list-group pokemon-list"></ul>
     </div>

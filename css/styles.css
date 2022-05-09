@@ -8,19 +8,26 @@ Colors:
 #eee8a9 - yellowish */
 
  /* Base */
-
 :root {
   --bkgdcolor: #2c96c3;
   --text: #e6f4f1;
   --link: #eee8a9;
+  --red: hsla(0, 100%, 50%, 1);
+  --rosso-corsa: hsla(0, 100%, 40%, 1);
+  --violet-blue: hsla(233, 57%, 51%, 1);
+  --golden-yellow: hsla(52, 100%, 50%, 1);
+  --golden-yellow-light: hsla(52, 100%, 50%, 0.05);  
+  --old-gold: hsla(52, 66%, 42%, 1);
+  --old-gold-light: hsla(52, 66%, 90%, 1);
 }
 
 * {
   box-sizing: border-box;
+  
 }
 
 body {
-  background-color: var(--bkgdcolor);
+  background-color: var( --golden-yellow-light);
   color: var(--text);
   font-family: "Roboto", "Lilita One", sans-serif;
 }
@@ -39,7 +46,8 @@ b {
 
 /* Nav bar */
 nav {
-  background-color: var(--bkgdcolor);
+  background-color: var(--rosso-corsa);
+  color: var(--text);
 }
 
 /* Main body */
@@ -52,21 +60,17 @@ nav {
 }
 
 .main-title {
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
-  width: 100%;
-  background-color: #be113f;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  font-family: "Lilita One", cursive;
+  font-size:  2rem;
+  letter-spacing: 2px;
+  background-color: inherit;
 }
 
 .main-list {
   justify-content: left;
   align-items: center;
   background-color: #f2faef;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-radius: 8px;
 }
 
 .pokemon-list {
