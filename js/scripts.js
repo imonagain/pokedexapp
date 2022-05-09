@@ -1,7 +1,7 @@
 // Start of IIFE
 let pokemonRepository = (function () {
   let pokemonList = []; //empty array
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150"; //API
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
 
   // adds pokemon to end of pokemonList
@@ -65,7 +65,7 @@ let pokemonRepository = (function () {
         return response.json();
       })
       .then(function (details) {
-        pokemon.imageUrl = details.sprites.front_shiny; // .spirtes is coming from API
+        pokemon.imageUrl = details.sprites.other.dream_world.front_default;
         pokemon.height = details.height;
         pokemon.baseExperience = details.base_experience;
         pokemon.types = details.types[0].type.name;
@@ -104,12 +104,11 @@ function openModal(pokemon) {
     
     let titleElement = document.createElement('h2');
     titleElement.innerText = pokemon.name;
-
+   
     let imgElement = document.createElement('img')
     imgElement.src = pokemon.imageUrl
     
     let contentElement = document.createElement('p');
-    contentElement.src = pokemon.imageUrl;
     contentElement.textContent += "Height: " + pokemon.height + " meters";
     contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience + " points";
     contentElement.innerText += "\n" + "Types: " + pokemon.types;

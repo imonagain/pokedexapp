@@ -87,6 +87,7 @@ b {
     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
   text-align: center;
   position: relative;
+  text-transform: capitalize;
 }
 
 .pokemon-button:hover {
@@ -119,31 +120,66 @@ top: 0;
 height: 100%;
 width: 100%;
 overflow: auto;
-background: rgba(72, 69, 69, 0.3)
+background: rgba(72, 69, 69, 0.6)
 }
 
 /* What actually holds modal content */
 #modal-content {
   background-color: #f4f4f4;
-  margin: 40% auto;
-  padding: 20px;
-  width: 60%;
+  margin: 10% auto;
+  width: 35vh;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-  color: purple;
-  border: 1px solid green;
+  color: #000;
   box-sizing: border-box;
   z-index: 999; 
   overflow: auto; 
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 #modalBtn {
   display: none;
 }
 
+#modal-content img {
+  width: 100%;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.modalInnerBody {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  
+}
+
+.modalInnerBody h2 {
+  background: #be113f;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 10px;
+  margin: 0;
+  color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: center;
+}
+
+.modalInnerBody p {
+  padding: 10px;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
 .closeBtn {
-  color: lightseagreen;
+  color: #fff;
   float: right;
   font-size: 30px;
+  padding-top: 2px;
+  padding-right: 10px;
 }
 
 .closeBtn:hover, .closeBtn:focus {
@@ -151,57 +187,6 @@ background: rgba(72, 69, 69, 0.3)
   text-decoration: none;
   cursor: pointer;
 }
-
-.imgElement {
-  width: 100%;
-}
-
-
-/* #modal-content.is-visible {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999; 
-  overflow: auto; 
-  display: grid;
-  text-align: center; 
-} */
-
-/* Previous modal styling */
-/* .modal {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #fff;
-  color: #000;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  text-align: left;
-} */
-
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: underline;
-}
-
-.modal h1 {
-  margin-top: 0;
-}
-
-.modal p {
-  margin-bottom: 0;
-}
-
 
 /* Accessibility code */
 @media all and (max-width: 20em) {
