@@ -120,6 +120,7 @@ margin-bottom: 20px;
   inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12); */
   text-align: center;
   position: relative;
+  text-transform: capitalize;
 }
 
 
@@ -142,7 +143,6 @@ margin-bottom: 20px;
   position: relative;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
-
 
  .modal-content {
   margin: 0 auto;
