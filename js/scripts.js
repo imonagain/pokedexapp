@@ -80,22 +80,24 @@ let pokemonRepository = (function () {
     let modalTitle = $(".modal-title");
     let titleElement = document.createElement("h1");
     titleElement.innerText = pokemon.name;
- 
-    let modalBody = $(".modal-body");
-    // let modalHeader = $(".modal-header");
 
+    let modalImage = $('modal-image');
     let imgElement = document.createElement('img')
     imgElement.src = pokemon.imageUrl
+ 
+    let modalBody = $(".modal-body");
 
     let contentElement = document.createElement("p");
-    contentElement.innerText = "Height: " + pokemon.height + " meters";
+    contentElement.innerText += "\n" + "Height: " + pokemon.height + " meters";
     contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience + " points";
     contentElement.innerText += "\n" + "Types: " + pokemon.types;
 
     modalTitle.empty();
+    modalImage.empty();
     modalBody.empty();
 
     modalTitle.append(titleElement);
+    modalImage.append(imgElement);
     modalBody.append(imgElement);
     modalBody.append(contentElement);
   }
