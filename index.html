@@ -9,33 +9,75 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="img\favicon\favicon.ico">
   <link rel="stylesheet" href="css/styles.css" />
   <title>Pokedex</title>
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="navbar-brand main-title">POKEDEX</div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Submit">
+      <button id="searchButton" class="btn my-2 my-sm-0" value="Submit" type="submit">Submit</button>
+    </form>
+  </nav>
 
-  <button id='modalBtn' class="button"> 
-    Show modal
-  </button>
-  
-  <div id="simpleModal" class="modal">
-    <div id="modal-content" class="modal-content">
-      <div class="closeBtn-container">
-        <span class="closeBtn">&times;</span></div>
-         <div id="modal-body"></div>
+  <main>
+    <!-- MODAL -->
+    <div class="modal fade" id="pokemonModal" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="sr-only">Pokemon details</div>
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <!-- POKEMON NAME "HEADER" -->
+            <div class="modal-title"></div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!-- POKEMON CONTENT -->
+          <div class="modal-body-container container-fluid">
+            <div class="modal-image"></div>
+          <div class="modal-body">
+            ...
+          </div>
+        </div>
+
+        </div>
+      </div>
     </div>
-    </div>
-  
+
+
+    <!-- LIST OF POKEMON -->
     <div class="container">
-      <div class="main-title">
-        <h1>POKEDEX</h1>
-      </div>
+
       <div class="main-list">
-        <ul class="pokemon-list"></ul>
+
+        <ul class="pokemon-list list-unstyled" data-toggle="modal" data-target="#pokemonModal"></ul>
       </div>
     </div>
-  </div>
+
+
+
+  </main>
+
+
+  <!-- Bootstrap Javascript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
   <script src="js/promise-polyfill.js"></script>
   <script src="js/fetch-polyfill.js"></script>
   <script src="js/scripts.js"></script>
