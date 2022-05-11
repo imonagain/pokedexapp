@@ -15,7 +15,7 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let listPokemon = document.createElement('li');
-    listPokemon.classList.add('group-list-item');
+    listPokemon.classList.add('list-group-item');
     let button = document.createElement('button');
 
     button.innerText = pokemon.name;
@@ -25,7 +25,7 @@ let pokemonRepository = (function () {
     button.addEventListener("click", function (event) {
       showDetails(pokemon);
 
-    button.setAttribute('data-toggle', 'modal');
+    // button.setAttribute('data-toggle', '#pokemonModal');
     button.setAttribute('data-target', '#pokemonModal');
     });
   }
