@@ -1,0 +1,15 @@
+
+// More ESLint rules: https://eslint.org/docs/rules/
+
+{
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules": {
+        "quotes": ["error", "single"]
+    }
+}
