@@ -15,7 +15,7 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let listPokemon = document.createElement('li');
-    listPokemon.classList.add('group-list-item');
+    listPokemon.classList.add('list-group-item');
     let button = document.createElement('button');
 
     button.innerText = pokemon.name;
@@ -25,7 +25,7 @@ let pokemonRepository = (function () {
     button.addEventListener("click", function (event) {
       showDetails(pokemon);
 
-    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-toggle', '#pokemonModal');
     button.setAttribute('data-target', '#pokemonModal');
     });
   }
@@ -79,15 +79,22 @@ let pokemonRepository = (function () {
   function showModal(pokemon) {
     let modalTitle = $(".modal-title");
     let titleElement = document.createElement("h1");
+    titleElement.classList.add('titleElement');
     titleElement.innerText = pokemon.name;
+
+    let phraseElement = document.createElement("h2");
+  phraseElement.classList.add('phraseElement');
+    phraseElement.innerText = 'Gotta Catch \'Em All!';
 
     let modalImage = $('modal-image');
     let imgElement = document.createElement('img')
+    imgElement.classList.add('imgElement')
     imgElement.src = pokemon.imageUrl
  
     let modalBody = $(".modal-body");
 
     let contentElement = document.createElement("p");
+    contentElement.classList.add('contentElement');
     contentElement.innerText += "\n" + "Height: " + pokemon.height + " meters";
     contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience + " points";
     contentElement.innerText += "\n" + "Types: " + pokemon.types;
@@ -96,9 +103,9 @@ let pokemonRepository = (function () {
     modalImage.empty();
     modalBody.empty();
 
-    modalTitle.append(titleElement);
-    modalImage.append(imgElement);
+    modalTitle.append(phraseElement);
     modalBody.append(imgElement);
+    modalBody.append(titleElement)
     modalBody.append(contentElement);
   }
 
