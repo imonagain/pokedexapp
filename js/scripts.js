@@ -65,9 +65,9 @@ let pokemonRepository = (function () {
       .then(function (details) {
         item.imageUrl = details.sprites.other.dream_world.front_default;
         item.height = details.height;
+        item.weight = details.weight;
         item.baseExperience = details.base_experience;
-        item.types = [];
-        details.types.forEach(function(detail) {
+        details.types.forEach(function() {
           item.types = details.types[0].type.name;
         });
       })
@@ -95,9 +95,10 @@ let pokemonRepository = (function () {
 
     let contentElement = document.createElement("p");
     contentElement.classList.add('contentElement');
-    contentElement.innerText += "\n" + "Height: " + pokemon.height + " meters";
-    contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience + " points";
-    contentElement.innerText += "\n" + "Types: " + pokemon.types;
+    contentElement.innerText += "\n" + "Height: " + pokemon.height;
+    contentElement.innerHTML += "\n" + "Weight: " + pokemon.weight;
+    contentElement.innerHTML += "\n" + "Base Experience:  " + pokemon.baseExperience;
+    contentElement.innerText += "\n" + "Type: " + pokemon.types;
 
     modalTitle.empty();
     modalImage.empty();
