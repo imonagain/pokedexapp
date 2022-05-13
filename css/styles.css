@@ -65,16 +65,19 @@ img {
 .modal-header,
 .modal-title {
   border: none;
-  display: inline-flex;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .phraseElement {
   font-family: 'Lilita One', cursive;
   font-size: 1.7rem;
-  /* text-align: justify; */
   color: var(--golden-yellow);
   letter-spacing: 2px;
-  margin-top: 5px;
+  /* margin-left: 12px;
+  margin-top: 5px; */
+  /* border: 2px solid green; */
+  margin: 0 auto;
 }
 
 .btn { 
@@ -178,6 +181,7 @@ img {
   font-size: 1rem;
   text-transform: capitalize;
   text-align: center;
+  color: #000;
   width: 100%;
   font-weight: 900;
   letter-spacing: 1px;

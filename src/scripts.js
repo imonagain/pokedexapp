@@ -78,13 +78,13 @@ let pokemonRepository = (function () {
 
   function showModal(pokemon) {
     let modalTitle = $(".modal-title");
+    let phraseElement = document.createElement("div");
+    phraseElement.classList.add('phraseElement');
+    phraseElement.innerText = 'Gotta Catch \'Em All!';
+
     let titleElement = document.createElement("h1");
     titleElement.classList.add('titleElement');
     titleElement.innerText = pokemon.name;
-
-    let phraseElement = document.createElement("h2");
-  phraseElement.classList.add('phraseElement');
-    phraseElement.innerText = 'Gotta Catch \'Em All!';
 
     let modalImage = $('modal-image');
     let imgElement = document.createElement('img')
@@ -95,9 +95,9 @@ let pokemonRepository = (function () {
 
     let contentElement = document.createElement("p");
     contentElement.classList.add('contentElement');
-    contentElement.innerText += "\n" + "Height: " + pokemon.height;
-    contentElement.innerHTML += "\n" + "Weight: " + pokemon.weight;
-    contentElement.innerHTML += "\n" + "Base Experience:  " + pokemon.baseExperience;
+    contentElement.textContent += "Height: " + pokemon.height;
+    contentElement.textContent += "\n" + "Weight: " + pokemon.weight;
+    contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience;
     contentElement.innerText += "\n" + "Type: " + pokemon.types;
 
     modalTitle.empty();
