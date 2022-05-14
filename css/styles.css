@@ -20,7 +20,7 @@
 body {
   font-family: 'Roboto', 'Arial', sans-serif;
   background-color: var(--old-gold-light);
-  background-image: url(../img/pokeballbg_fade.png);
+  background-image: url(img/pokeballbg_fade.png);
   z-index: -50;
 }
 
@@ -62,16 +62,20 @@ img {
   margin-bottom: 20px;
 }
 
-.modal-header,
-.modal-title {
-  border: none;
+.modal-header {
   display: inline-flex;
+  border: none;
+}
+
+.modal-title {
+ float: left;
+
 }
 
 .phraseElement {
   font-family: 'Lilita One', cursive;
   font-size: 1.7rem;
-  /* text-align: justify; */
+  text-align: justify;
   color: var(--golden-yellow);
   letter-spacing: 2px;
   margin-top: 5px;
@@ -86,7 +90,7 @@ img {
 }
 
 .btn:hover { 
-  color: white !important;
+  color: gray;
   font-size: 40px;
   border: 0;
   background: none;
