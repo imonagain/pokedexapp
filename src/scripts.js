@@ -22,16 +22,16 @@ let pokemonRepository = (function () {
     button.classList.add('pokemon-button'); //
     listPokemon.append(button);
     pokemonList.append(listPokemon);
-    button.addEventListener("click", function (event) {
+    button.addEventListener('click', function () {
       showDetails(pokemon);
 
-    button.setAttribute('data-toggle', '#pokemonModal');
-    button.setAttribute('data-target', '#pokemonModal');
+      button.setAttribute('data-toggle', '#pokemonModal');
+      button.setAttribute('data-target', '#pokemonModal');
     });
   }
 
   function showDetails(item) {
-   loadDetails(item).then(function () {
+    loadDetails(item).then(function () {
       showModal(item);
     });
   }
@@ -67,7 +67,7 @@ let pokemonRepository = (function () {
         item.height = details.height;
         item.weight = details.weight;
         item.baseExperience = details.base_experience;
-        details.types.forEach(function() {
+        details.types.forEach(function () {
           item.types = details.types[0].type.name;
         });
       })
@@ -77,12 +77,12 @@ let pokemonRepository = (function () {
   }
 
   function showModal(pokemon) {
-    let modalTitle = $(".modal-title");
-    let phraseElement = document.createElement("div");
+    let modalTitle = $('.modal-title');
+    let phraseElement = document.createElement('div');
     phraseElement.classList.add('phraseElement');
     phraseElement.innerText = 'Gotta Catch \'Em All!';
 
-    let titleElement = document.createElement("h1");
+    let titleElement = document.createElement('h1');
     titleElement.classList.add('titleElement');
     titleElement.innerText = pokemon.name;
 
@@ -90,15 +90,15 @@ let pokemonRepository = (function () {
     let imgElement = document.createElement('img')
     imgElement.classList.add('imgElement')
     imgElement.src = pokemon.imageUrl
- 
-    let modalBody = $(".modal-body");
 
-    let contentElement = document.createElement("p");
+    let modalBody = $('.modal-body');
+
+    let contentElement = document.createElement('p');
     contentElement.classList.add('contentElement');
-    contentElement.textContent += "Height: " + pokemon.height;
-    contentElement.textContent += "\n" + "Weight: " + pokemon.weight;
-    contentElement.textContent += "\n" + "Base Experience:  " + pokemon.baseExperience;
-    contentElement.innerText += "\n" + "Type: " + pokemon.types;
+    contentElement.textContent += 'Height: ' + pokemon.height;
+    contentElement.textContent += '\n' + 'Weight: ' + pokemon.weight;
+    contentElement.textContent += '\n' + 'Base Experience:  ' + pokemon.baseExperience;
+    contentElement.innerText += '\n' + 'Type: ' + pokemon.types;
 
     modalTitle.empty();
     modalImage.empty();
@@ -110,10 +110,10 @@ let pokemonRepository = (function () {
     modalBody.append(contentElement);
   }
 
-  $(document).ready(function(){
-    $("#myInput").on("keyup", function() {
+  $(document).ready(function () {
+    $('#myInput').on('keyup', function () {
       var value = $(this).val().toLowerCase();
-      $(".pokemon-list li").filter(function() {
+      $('.pokemon-list li').filter(function () {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
       });
     });

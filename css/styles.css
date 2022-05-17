@@ -53,6 +53,34 @@ body {
   width: fit-content;
 }
 
+#searchclear {
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: #000;
+  outline: 0;
+  border: 1px solid;
+  border-color: var(--old-gold);
+  cursor: pointer;
+  padding: 6px;
+  background-color: #FFF;
+}
+
+#searchclear:hover {
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: #FFF;
+  outline: 0;
+  border: 1px solid;
+  border-color: var(--old-gold);
+  cursor: pointer;
+  padding: 6px;
+  background-color: #d1b452;
+}
+
 /* =================Modal================== */
 /* Image of pokemon */
 img {
@@ -80,7 +108,7 @@ img {
   margin: 0 auto;
 }
 
-.btn { 
+.btn {
   color: white !important;
   font-size: 40px;
   border: 0;
@@ -88,7 +116,7 @@ img {
   text-decoration: none;
 }
 
-.btn:hover { 
+.btn:hover {
   color: white !important;
   font-size: 40px;
   border: 0;
@@ -138,8 +166,8 @@ img {
   letter-spacing: 1.7px;
   text-align: center;
   text-transform: uppercase;
-  }
-  
+}
+
 
 /* Display box */
 .contentElement {
@@ -216,27 +244,58 @@ img {
   left: 0px;
 }
 
-@media only screen and (max-width: 588px) {
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+@media only screen and (max-width: 580px) {
   .pokemon-list {
     grid-template-columns: 1fr;
   }
 
   .navbar {
     justify-content: center;
+    align-items: center;
   }
 
   #myInput {
     margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  #searchclear {
+    margin: 0 auto;
   }
 }
 
-@media only screen and (min-width: 589px) and (max-width: 768px) {
+@media only screen and (min-width: 581px) and (max-width: 768px) {
   .pokemon-list {
     grid-template-columns: 1fr 1fr;
   }
 
   .button-52 {
     padding: 13px 50px 13px;
+  }
+
+  .navbar {
+    justify-content: center;
   }
 }
 
